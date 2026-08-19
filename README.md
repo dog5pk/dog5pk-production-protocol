@@ -23,6 +23,7 @@ DPP requires correctness, completion, evidence, honest uncertainty, disciplined 
 | [Quick Start](docs/QUICKSTART.md) | Apply DPP to a real task in minutes |
 | [Open Benchmarks](BENCHMARKS.md) | Independently test DPP using paired Control/DPP runs |
 | [Benchmark 001 Results](results/benchmark-001/RESULTS.md) | First published paired result |
+| [Benchmark 002 — Production Rescue](benchmarks/benchmark-002/TASK.md) | Frozen v1.4 production-code benchmark awaiting execution |
 | [Governance](GOVERNANCE.md) | How DPP versions and proposals are managed |
 | [Contributing](CONTRIBUTING.md) | How to report defects and propose improvements |
 
