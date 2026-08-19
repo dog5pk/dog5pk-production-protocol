@@ -79,6 +79,7 @@ It is a standard against which the quality, completeness, honesty, and verifiabi
 ├── reader/          # Complete explanatory editions
 ├── operational/     # Direct-use operating editions
 ├── docs/            # Adoption and reference guidance
+├── benchmarks/      # Frozen benchmark tasks, rubrics, and input records
 ├── results/         # Published benchmark results
 ├── examples/        # Practical usage examples
 └── .github/         # Structured issue and contribution workflows
