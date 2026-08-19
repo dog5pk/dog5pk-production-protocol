@@ -1,97 +1,87 @@
-# Open DPP Benchmarks
+# DPP Benchmarks
 
-Benchmark 001 is complete. Benchmarks 002 and 003 are intentionally left to independent participants.
+DPP benchmarks compare the same task under matched conditions:
 
-The purpose is simple: test whether applying the Dog5pk Production Protocol (DPP) changes the quality of an AI system's work under the same task conditions.
+- **Control:** the model receives the task without DPP.
+- **DPP:** the same model receives the same task after the frozen DPP Operational Edition.
 
-## Independent Test Method
+Results are evidence, not advertising. Wins, ties, losses, regressions, mistakes, and inconclusive outcomes must be preserved.
 
-1. Choose an AI platform and record the platform, model, and model/version information available to you.
-2. Create a fresh conversation with no DPP context.
-3. Give the model your benchmark task. Do not tell it that it is the Control condition or that another run will be compared against it.
-4. Preserve the model's first completed response exactly as returned. Do not repair, rewrite, selectively excerpt, or improve it.
-5. Create a second fresh conversation using the same platform/model.
-6. Provide the current DPP Operational Edition and instruct the model to apply DPP to the next task.
-7. Give it the exact same benchmark task used for Control.
-8. Preserve that first completed response exactly as returned.
-9. Compare the two outputs using the same rubric. Do not change scoring criteria after seeing the results.
-10. Report the result whether DPP wins, ties, or loses.
+## Benchmark status
 
-## Required Submission Evidence
+| Benchmark | Task | DPP version | Status |
+|---|---|---|---|
+| [001](results/benchmark-001/RESULTS.md) | SafeKeep launch package | v1.3 | Complete — Control 35/40; DPP 37.5/40 |
+| [002](benchmarks/benchmark-002/TASK.md) | Production Rescue | [v1.4](operational/DPP-v1.4-Operational.md) | Frozen; execution pending |
+| 003 | Independent paired test | Current version at freeze | Reserved for an independent participant |
 
-An independent benchmark submission must include:
+Benchmark 001 is one observed result, not proof that DPP improves every model or task. Benchmark 002 is a separate production-code repair benchmark and does not replace or revise Benchmark 001.
 
-- benchmark number;
-- AI platform;
-- model and version/build information when available;
-- date of the test;
-- complete Control output;
-- complete DPP output;
-- scoring rubric;
-- Control score;
-- DPP score;
-- observed differences, including failures or weaknesses in either condition;
-- disclosure of any retries, interruptions, tool use, context contamination, or other conditions that could affect the comparison.
+## Matched-run method
 
-The benchmark task itself does not have to be published if the tester wishes to keep it private, but both conditions must receive the identical task and the tester must state that this was the case.
+1. Freeze the task, scoring rubric, inputs, DPP edition, model/version, account tier, tools, environment, and time or interaction budget.
+2. Create a fresh context for the Control run.
+3. Provide the task without DPP and preserve the complete run exactly as returned.
+4. Create a second fresh context using the same platform and model.
+5. Provide the frozen DPP Operational Edition, then the identical task.
+6. Preserve the complete DPP run exactly as returned.
+7. Apply the frozen rubric equally to both submissions.
+8. Publish the result without repairing either submitted run or changing the rubric afterward.
 
-## Integrity Rules
+Randomize run order when practical. Record any retry, interruption, intervention, tool failure, contamination, or deviation.
 
+## Required evidence
+
+A valid result must preserve:
+
+- benchmark identifier and date;
+- provider, product, model, and displayed version or build;
+- account tier, enabled tools, environment, and budget;
+- frozen task, rubric, fixture identifiers, and DPP input;
+- complete Control and DPP prompts, transcripts, and outputs;
+- tool calls, errors, retries, interruptions, and human intervention;
+- start and end commit SHAs when repositories are involved;
+- public test output and withheld evaluator output;
+- dimension scores with evidence for every deduction;
+- critical-failure flags;
+- limitations, deviations, and clearly marked redactions.
+
+The evaluator or seeded-defect map must not be shown to either run before submission.
+
+## Integrity rules
+
+- Same task and matched conditions for both runs.
 - Fresh context for each condition.
-- Same task for both conditions.
-- Same AI platform/model for the paired comparison.
-- Control does not receive DPP.
-- DPP condition receives DPP before the task.
-- First completed output is the result unless a documented technical failure prevented completion.
-- No hidden correction round may be presented as the original result.
-- No removing embarrassing mistakes.
-- No selective publication of only favorable DPP outcomes.
-- A DPP loss is a valid result.
-- A tie is a valid result.
-- An inconclusive test is a valid result when the reason is documented.
+- Control receives no DPP.
+- DPP receives the exact frozen Operational Edition before the task.
+- First completed submission is the result unless a documented technical failure prevented completion.
+- No hidden correction round presented as the original result.
+- No weakening tests or changing scoring after seeing outputs.
+- No selective publication or removal of unfavorable evidence.
+- No generalization beyond the evidence actually produced.
 
-## Scoring
+## Benchmark 001 — SafeKeep
 
-A benchmark may use a task-specific rubric, but the rubric must be established before scoring both outputs and applied equally to both.
-
-Benchmark 001 used eight dimensions scored out of five:
-
-1. Correctness
-2. Completeness
-3. Constraint adherence
-4. Internal consistency
-5. Verification honesty
-6. Failure/boundary handling
-7. Usability
-8. Unnecessary invention
-
-Independent testers may use this rubric or a different one better suited to their task. If a different rubric is used, publish it with the result.
-
-## Benchmarks 002 and 003
-
-Benchmark 002 and Benchmark 003 are reserved for independent tests.
-
-Dog5pk does not prescribe the task, platform, model, or expected outcome for either benchmark. The independent tester chooses the task and model while following the paired Control/DPP method above.
-
-The point is not to manufacture another DPP victory. The point is to find out what happens when someone else runs the experiment.
-
-## Benchmark 001
-
-The first completed result is preserved at:
-
-`results/benchmark-001/RESULTS.md`
-
-Recorded result:
+The completed paired result and raw outputs are preserved in [`results/benchmark-001/RESULTS.md`](results/benchmark-001/RESULTS.md).
 
 - Control: 35/40
 - DPP: 37.5/40
 - Difference: +2.5 points
-- Relative improvement over Control score: +7.1%
+- Relative difference over the Control score: +7.1%
 
-Benchmark 001 should be treated as one observed result, not proof that DPP improves every model or every task.
+## Benchmark 002 — Production Rescue
 
-## Submission Principle
+The frozen definition is:
 
-Results should be published as they fell.
+- [Task](benchmarks/benchmark-002/TASK.md)
+- [Scoring rubric](benchmarks/benchmark-002/SCORING.md)
+- [Frozen inputs](benchmarks/benchmark-002/FIXTURE_COMMIT.md)
+- [DPP v1.4 Operational Edition](operational/DPP-v1.4-Operational.md)
 
-Wins, losses, ties, mistakes, unexpected behavior, and limitations are evidence. Do not dress the result up after the fact.
+Benchmark 002 preserves the historical fixture at commit `273946d976c624e4769727d01b719a9f70949b98` and pins the DPP v1.4 Operational Edition by blob and release commit. Its result must be published whether DPP wins, ties, loses, or causes a regression.
+
+## Independent submissions
+
+Independent testers may propose Benchmark 003 or later work using a task-specific rubric established before scoring. The task may remain private when necessary, but both conditions must receive the identical task and the submission must disclose that fact.
+
+Do not reconstruct results from memory, omit embarrassing failures, or convert a case study into a universal claim.
