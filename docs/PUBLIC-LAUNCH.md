@@ -19,7 +19,7 @@ DPP has also completed its first paired benchmark. On Benchmark 001, using Claud
 
 The result is published as it fell, including weaknesses found in both outputs. One benchmark does not prove that DPP improves every model or every task. It does establish one observed case where a highly capable AI produced a measurably stronger result under DPP.
 
-Benchmarks 002 and 003 are intentionally left open for independent participants. Anyone can choose a platform, choose a task, run the same task once without DPP and once with DPP in a fresh conversation, preserve both first completed outputs, score them under the same rubric, and submit the result whether DPP wins, ties, loses, or the test is inconclusive.
+Benchmark 002 is frozen as a substantially harder Production Rescue test: two matched runs will repair the same defective service, with the only intentional difference being whether the model receives DPP v1.4. Its task, rubric, fixture commit, and DPP input are publicly pinned before execution. Benchmark 003 remains open for an independent participant using the same paired method.
 
 The current public materials include:
 
@@ -28,7 +28,8 @@ The current public materials include:
 - Quick Start guide
 - Whitepaper
 - Benchmark 001 results
-- Open Benchmark 002/003 framework
+- Frozen Benchmark 002 Production Rescue definition
+- Open independent Benchmark 003 framework
 - Governance and contribution guidance
 
 DPP is not a jailbreak, model override, or claim that artificial intelligence can be made infallible. It is a production standard designed to make AI-assisted work more dependable, inspectable, honest, and accountable.
