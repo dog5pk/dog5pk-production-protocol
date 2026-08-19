@@ -7,6 +7,7 @@ All material changes to the Dog5pk Production Protocol are documented here.
 ### Repository
 - Added an open independent benchmark framework for future third-party Control/DPP comparisons.
 - Published Benchmark 001 results under `results/benchmark-001/`.
+- Froze Benchmark 002 — Production Rescue against DPP v1.4 with an immutable fixture commit, task-specific scoring rubric, and pinned normative input.
 
 These repository additions do not alter the normative meaning of DPP v1.4.
 
